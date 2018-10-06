@@ -40,6 +40,7 @@ public class objectPool : MonoBehaviour {
         if (inObjectList.Count == 0)
         {
             obj = Instantiate(objectPrefab, this.transform, false);
+            usingObjectList.Add(obj);
             return obj;
         }
         else
