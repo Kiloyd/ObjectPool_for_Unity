@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class bullet : MonoBehaviour {
 
-    private objectPool op;
+    private ObjectPool op;
 
 	void Start ()
     {
-        op = FindObjectOfType<objectPool>();
+        op = FindObjectOfType<ObjectPool>();
 	}
 	
 	void Update ()

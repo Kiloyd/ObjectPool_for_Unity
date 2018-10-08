@@ -2,18 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//add Release() situation
 public class shoot : MonoBehaviour
 {
     private GameObject go;
-    private objectPool op;
+    private ObjectPool op;
 
     public Vector3 v;
     public Vector3 offset;
 
     private void Start()
     {
-        op = FindObjectOfType<objectPool>();
+        op = FindObjectOfType<ObjectPool>();
     }
 
     void shootObject()

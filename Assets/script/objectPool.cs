@@ -2,35 +2,42 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//add maximum amount
-public class objectPool : MonoBehaviour {
+public class ObjectPool : MonoBehaviour {
 
     // Parameter
-   
+
+    // objectPrefab will use to Instantiate when object pool default amount is inadequate
+    [Header("Object Prefab Here!"), Tooltip("Drag the object prefab which you put in the Pool")]
+    public GameObject objectPrefab;
+
+    // amount means the objects amount in the pool.
+    [Header("Object default amount")]
+    [Tooltip("The default amount of the objects, it should be enough for the rest of the scene.\n " +
+            "Otherwise, it will instantiate the prefab you assign.")]
+    public int amount = 10;
+
+    // inObjectList tracks the objects which are ready to be use.
     [SerializeField]
     private List<GameObject> inObjectList;
+
+    // usingObjectList tracks the objects which are being used.
     [SerializeField]
     private List<GameObject> usingObjectList;
-    private bool reset;
 
-    public GameObject objectPrefab;
-    public Transform returnTransform;
     
     // Monobehavior
 
-    private void Start()
+    private void Awake()
     {
-        // Add the Children Objects to the inObjectList, which means the elements are unassigned.
         GameObject go;
-        for (int i = 0; i < transform.childCount; i++)
+        for (int i = 0; i < amount; i++)
         {
-            go = transform.GetChild(i).gameObject;
+            go = Instantiate(objectPrefab, this.transform);
             inObjectList.Add(go);
 
             if (go.GetComponent<Rigidbody>() != null)
                 go.GetComponent<Rigidbody>().isKinematic = true;
         }
-
     }
 
     // public method
