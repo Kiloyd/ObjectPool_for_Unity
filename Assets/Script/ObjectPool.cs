@@ -70,7 +70,7 @@ public class ObjectPool : MonoBehaviour {
         }
         else
         {
-            Debug.Log("Object doesn't contain in Object Pool !");
+            //Debug.Log("Object doesn't contain in Object Pool !");
         }
     }
 }
