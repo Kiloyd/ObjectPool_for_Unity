@@ -2,11 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bullet : MonoBehaviour {
+public class bullet : MonoBehaviour
+{
+    #region Property
 
     private ObjectPool op;
 
-	void Start ()
+    #endregion
+
+    #region Unity
+    void Start ()
     {
         op = FindObjectOfType<ObjectPool>();
 	}
@@ -20,4 +25,6 @@ public class bullet : MonoBehaviour {
         }
 
 	}
+
+    #endregion
 }

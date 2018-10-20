@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class shoot : MonoBehaviour
 {
+    #region Property
+
     private GameObject go;
     private ObjectPool op;
 
     public Vector3 v;
     public Vector3 offset;
+
+    #endregion
+
+    #region Unity
 
     private void Start()
     {
@@ -28,4 +34,6 @@ public class shoot : MonoBehaviour
         if (Input.GetMouseButton(0))
             shootObject();
     }
+
+    #endregion
 }

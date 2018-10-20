@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectPool : MonoBehaviour {
+public class ObjectPool : MonoBehaviour
+{
 
-    // Parameter
+    #region Property
 
     // objectPrefab will use to Instantiate when object pool default amount is inadequate
     [Header("Object Prefab Here!"), Tooltip("Drag the object prefab which you put in the Pool")]
@@ -24,8 +25,9 @@ public class ObjectPool : MonoBehaviour {
     [SerializeField]
     private List<GameObject> usingObjectList;
 
-    
-    // Monobehavior
+    #endregion
+
+    #region Unity
 
     private void Awake()
     {
@@ -40,7 +42,10 @@ public class ObjectPool : MonoBehaviour {
         }
     }
 
-    // public method
+    #endregion
+
+    #region Public Method
+
     public GameObject GetObject()
     {
         GameObject obj;
@@ -73,4 +78,6 @@ public class ObjectPool : MonoBehaviour {
             //Debug.Log("Object doesn't contain in Object Pool !");
         }
     }
+
+    #endregion
 }
